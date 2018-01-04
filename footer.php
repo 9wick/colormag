@@ -31,27 +31,35 @@ $class_name = '';
 if ( $main_total_footer_option_layout_class == 'type_two' ) {
 	$class_name = 'colormag-footer--classic';
 }
+
 ?>
 
-<footer id="colophon" class="clearfix <?php echo esc_attr( $class_name ); ?>">
-	<?php get_sidebar( 'footer' ); ?>
-	<div class="footer-socket-wrapper clearfix">
-		<div class="inner-wrap">
-			<div class="footer-socket-area">
-				<div class="footer-socket-right-section">
-					<?php
-					if ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) {
-						colormag_social_links();
-					}
-					?>
-				</div>
 
-				<div class="footer-socket-left-section">
-					<?php do_action( 'colormag_footer_copyright' ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
+<footer id="colophon" class="clearfix <?php echo esc_attr( $class_name ); ?>">
+    <?php
+    get_sidebar('footer');
+
+    if (( get_theme_mod('colormag_footer_copyright_enable', 'enable') == 'enable' ) || get_theme_mod('colormag_social_link_activate', 0) == 1) {
+        ?>
+
+        <div class="footer-socket-wrapper clearfix">
+            <div class="inner-wrap">
+                <div class="footer-socket-area">
+                    <div class="footer-socket-right-section">
+                        <?php
+                        if (get_theme_mod('colormag_social_link_activate', 0) == 1) {
+                            colormag_social_links();
+                        }
+                        ?>
+                    </div>
+
+                    <div class="footer-socket-left-section">
+                        <?php do_action('colormag_footer_copyright'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
 </footer>
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
