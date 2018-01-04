@@ -477,6 +477,10 @@ add_action( 'colormag_footer_copyright', 'colormag_footer_copyright', 10 );
  */
 if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 	function colormag_footer_copyright() {
+                if ( get_theme_mod( 'colormag_footer_copyright_enable', 'enable' ) == 'disable' ){
+                return;
+            }
+
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
 		$wp_link = '<a href="https://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '"><span>' . __( 'WordPress', 'colormag' ) . '</span></a>';

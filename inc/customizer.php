@@ -753,6 +753,32 @@ function colormag_customize_register( $wp_customize ) {
 		'title'       => esc_html__( 'Footer Options', 'colormag' ),
 	) );
 
+        
+        
+	// logo upload options
+	$wp_customize->add_section( 'colormag_footer_copyright', array(
+		'priority' => 0,
+		'title'    => __( 'Footer Copyright Display Enable', 'colormag' ),
+		'panel'    => 'colormag_footer_options',
+	) );
+        
+	$wp_customize->add_setting( 'colormag_footer_copyright_enable', array(
+		'default'           => 'enable',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize',
+	) );
+        
+        $wp_customize->add_control( 'colormag_footer_copyright_enable', array(
+		'type'    => 'radio',
+		'label'   => __( 'Choose the option that you want', 'colormag' ),
+		'section' => 'colormag_footer_copyright',
+		'choices' => array(
+			'enable' => "enable",
+			'disable'  => "disable",
+		),
+	) );
+        
+        
 	// Footer display type option
 	$wp_customize->add_section( 'colormag_main_footer_layout_display_type_section', array(
 		'priority' => 1,
