@@ -1654,21 +1654,28 @@ li.default-menu {
 	margin-right: 0;
 }
 
+.tg-footer-five-widgets{
+     display: flex;
+     flex-wrap: wrap;
+
+
+}
 .tg-footer-five-widgets .tg-first-footer-widget,
 .tg-footer-five-widgets .tg-second-footer-widget,
 .tg-footer-five-widgets .tg-third-footer-widget,
 .tg-footer-five-widgets .tg-fourth-footer-widget{
 	width: 16.8%;
-	float: left;
+        min-width:150px;
+	
 	margin-right: 3%;
-        min-width:200px;
+      
 }
 
 .tg-footer-five-widgets .tg-fifth-footer-widget {
 	width: 16.8%;
-	float: right;
-	margin-right: 0;
         min-width:200px;
+	margin-right: 0;
+        
 }
 
 
