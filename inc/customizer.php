@@ -650,6 +650,20 @@ function colormag_customize_register( $wp_customize ) {
 	) ) );
 
 
+	$wp_customize->add_setting( 'colormag_footer_sidebar_background_color', array(
+		'default'              => '#303440',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_footer_sidebar_background_color', array(
+		'label'    => __( 'Footer sidebar background color', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_footer_sidebar_background_color',
+	) ) );
+
+
 	// Color Skin
 	$wp_customize->add_section( 'colormag_color_skin_setting_section', array(
 		'priority' => 6,

@@ -386,10 +386,12 @@ function colormag_custom_css() {
         $header_background_color =  get_theme_mod( 'colormag_header_background_color', '#232323' ); 
         $header_text_color =  get_theme_mod( 'colormag_header_text_color', '#FFFFFF' ); 
         $header_hover_color =  get_theme_mod( 'colormag_header_text_hover_color', '#FFFFFF' ); 
+        $footer_sidebar_background_color =  get_theme_mod( 'colormag_footer_sidebar_background_color', '#303440' ); 
         
         $colormag_internal_css .= "nav#site-navigation{background-color:$header_background_color;}";
         $colormag_internal_css .= "nav#site-navigation a{color:$header_text_color;}";
         $colormag_internal_css .= "nav#site-navigation a:hover, nav#site-navigation li.current-menu-item a, nav#site-navigation li.current_page_item a{color:$header_hover_color;}";
+        $colormag_internal_css .= "div.footer-widgets-wrapper{background-color:$footer_sidebar_background_color;}";
         
         if ( ! empty( $colormag_internal_css ) ) {
 		echo '<!-- ' . get_bloginfo( 'name' ) . ' Internal Styles -->';
