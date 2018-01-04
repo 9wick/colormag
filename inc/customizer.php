@@ -167,6 +167,17 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_home_icon_display_section',
 		'settings' => 'colormag_home_icon_display',
 	) );
+        
+         $wp_customize->add_setting('colormag_home_icon_image', array(
+        'default'           => 0,
+        'capability'        => 'edit_theme_options',
+        ));
+         
+        $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'colormag_home_icon_image', array(
+            'label'    => __('Home image Upload', 'themename'),
+            'section'  => 'colormag_home_icon_display_section',
+            'settings' => 'colormag_home_icon_image',
+        )));
 
 	// primary sticky menu enable/disable
 	$wp_customize->add_section( 'colormag_primary_sticky_menu_section', array(

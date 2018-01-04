@@ -246,11 +246,21 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 					} else {
 						$home_icon_class = 'home-icon';
 					}
+                                        $homeImage = get_theme_mod( 'colormag_home_icon_image' ,0);
+                                                 
 					?>
 
-					<div class="<?php echo $home_icon_class; ?>">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><i class="fa fa-home"></i></a>
+                                        <div class="<?php echo $home_icon_class; ?>" >
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"  <?php if( $homeImage != null ||  $homeImage != 0){ ?> style="padding-top:0;padding-bottom:0;" <?php } ?>>
+                                                 <?php if( $homeImage != null ||  $homeImage != 0){ ?>
+                                                    <image src="<?php echo esc_url($homeImage); ?>" style="margin:0" />
+                                                 <?php }else{ ?>
+                                                    <i class="fa fa-home"></i>
+                                                 <?php }?>
+                                                    
+                                                </a>
 					</div>
+                            
 
 					<?php
 				}
