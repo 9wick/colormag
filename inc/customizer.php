@@ -662,6 +662,34 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_other_color_setting',
 		'settings' => 'colormag_footer_sidebar_background_color',
 	) ) );
+        
+        $wp_customize->add_setting( 'colormag_footer_sidebar_primary_background_color', array(
+		'default'              => '#289dcc',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_footer_sidebar_primary_background_color', array(
+		'label'    => __( 'Header background color. Choose a color to match your site', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_footer_sidebar_primary_background_color',
+	) ) );
+        
+        
+        $wp_customize->add_setting( 'colormag_footer_sidebar_primary_border_color', array(
+		'default'              => '#289dcc',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_footer_sidebar_primary_border_color', array(
+		'label'    => __( 'Header background color. Choose a color to match your site', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_footer_sidebar_primary_border_color',
+	) ) );
+        
 
 
 	// Color Skin

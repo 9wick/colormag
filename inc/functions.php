@@ -387,11 +387,15 @@ function colormag_custom_css() {
         $header_text_color =  get_theme_mod( 'colormag_header_text_color', '#FFFFFF' ); 
         $header_hover_color =  get_theme_mod( 'colormag_header_text_hover_color', '#FFFFFF' ); 
         $footer_sidebar_background_color =  get_theme_mod( 'colormag_footer_sidebar_background_color', '#303440' ); 
+        $footer_sidebar_primary_background_color =  get_theme_mod( 'colormag_footer_sidebar_primary_background_color', '#289dcc' ); 
+        $footer_sidebar_primary_border_color =  get_theme_mod( 'colormag_footer_sidebar_primary_border_color', '#289dcc' ); 
         
-        $colormag_internal_css .= "nav#site-navigation{background-color:$header_background_color;}";
-        $colormag_internal_css .= "nav#site-navigation a{color:$header_text_color;}";
-        $colormag_internal_css .= "nav#site-navigation a:hover, nav#site-navigation li.current-menu-item a, nav#site-navigation li.current_page_item a{color:$header_hover_color;}";
-        $colormag_internal_css .= "div.footer-widgets-wrapper{background-color:$footer_sidebar_background_color;}";
+        if($header_background_color != "#232323"){$colormag_internal_css .= "nav#site-navigation{background-color:$header_background_color;}";}
+        if($header_text_color != "#FFFFFF"){$colormag_internal_css .= "nav#site-navigation a{color:$header_text_color;}";}
+        if($header_hover_color != "#FFFFFF"){$colormag_internal_css .= "nav#site-navigation a:hover, nav#site-navigation li.current-menu-item a, nav#site-navigation li.current_page_item a{color:$header_hover_color;}";}
+        if($footer_sidebar_background_color != "#303440"){$colormag_internal_css .= "div.footer-widgets-wrapper{background-color:$footer_sidebar_background_color;}";}
+        if($footer_sidebar_primary_background_color != "#289dcc"){$colormag_internal_css .= "div.footer-widgets-wrapper .widget-title span{background-color:$footer_sidebar_primary_background_color;}";}
+        if($footer_sidebar_primary_border_color != "#289dcc"){$colormag_internal_css .= "div.footer-widgets-wrapper .widget-title{border-color:$footer_sidebar_primary_border_color;}";}
         
         if ( ! empty( $colormag_internal_css ) ) {
 		echo '<!-- ' . get_bloginfo( 'name' ) . ' Internal Styles -->';
