@@ -173,12 +173,43 @@ function colormag_customize_register( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         ));
          
+         
+         
         $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'colormag_home_icon_image', array(
             'label'    => __('Home image Upload', 'themename'),
             'section'  => 'colormag_home_icon_display_section',
             'settings' => 'colormag_home_icon_image',
         )));
 
+        
+         $wp_customize->add_setting('colormag_home_icon_image_width', array(
+        'default'           => 0,
+        'capability'        => 'edit_theme_options',
+        ));
+         
+
+	$wp_customize->add_control( 'colormag_home_icon_image_width', array(
+		'type'     => 'text',
+		'label'    => __( 'Home image width', 'colormag' ),
+		'section'  => 'colormag_home_icon_display_section',
+		'settings' => 'colormag_home_icon_image_width',
+	) );
+        
+         $wp_customize->add_setting('colormag_home_icon_image_height', array(
+        'default'           => 0,
+        'capability'        => 'edit_theme_options',
+        ));
+         
+         
+
+	$wp_customize->add_control( 'colormag_home_icon_image_height', array(
+		'type'     => 'text',
+		'label'    => __( 'Home image height', 'colormag' ),
+		'section'  => 'colormag_home_icon_display_section',
+		'settings' => 'colormag_home_icon_image_height',
+	) );
+        
+         
 	// primary sticky menu enable/disable
 	$wp_customize->add_section( 'colormag_primary_sticky_menu_section', array(
 		'title' => __( 'Sticky Menu', 'colormag' ),

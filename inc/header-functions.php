@@ -247,13 +247,15 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						$home_icon_class = 'home-icon';
 					}
                                         $homeImage = get_theme_mod( 'colormag_home_icon_image' ,0);
+                                        $homeImageWidth = get_theme_mod( 'colormag_home_icon_image_width' ,0);
+                                        $homeImageHeight = get_theme_mod( 'colormag_home_icon_image_height' ,0);
                                                  
 					?>
 
                                         <div class="<?php echo $home_icon_class; ?>" >
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"  <?php if( $homeImage != null ||  $homeImage != 0){ ?> style="padding-top:0;padding-bottom:0;" <?php } ?>>
                                                  <?php if( $homeImage != null ||  $homeImage != 0){ ?>
-                                                    <image src="<?php echo esc_url($homeImage); ?>" style="margin:0" />
+                                                    <image src="<?php echo esc_url($homeImage); ?>" style="margin:0" <?php if($homeImageWidth != 0){ ?>width="<?php echo $homeImageWidth; ?>"<?php } ?>  <?php if($homeImageHeight != 0){ ?>height="<?php echo $homeImageHeight; ?>"<?php } ?>/>
                                                  <?php }else{ ?>
                                                     <i class="fa fa-home"></i>
                                                  <?php }?>
