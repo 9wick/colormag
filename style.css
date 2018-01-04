@@ -1654,6 +1654,24 @@ li.default-menu {
 	margin-right: 0;
 }
 
+.tg-footer-five-widgets .tg-first-footer-widget,
+.tg-footer-five-widgets .tg-second-footer-widget,
+.tg-footer-five-widgets .tg-third-footer-widget,
+.tg-footer-five-widgets .tg-fourth-footer-widget{
+	width: 16.8%;
+	float: left;
+	margin-right: 4%;
+        min-width:200px;
+}
+
+.tg-footer-five-widgets .tg-fifth-footer-widget {
+	width: 16.8%;
+	float: right;
+	margin-right: 0;
+        min-width:200px;
+}
+
+
 .footer-widgets-area .widget-title {
 	border-bottom: 2px solid #289dcc;
 	font-size: 18px;

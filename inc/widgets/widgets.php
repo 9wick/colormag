@@ -191,6 +191,16 @@ function colormag_widgets_init() {
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
 	) );
+	// Registering footer sidebar five
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar Five', 'colormag' ),
+		'id'            => 'colormag_footer_sidebar_five',
+		'description'   => esc_html__( 'Shows widgets at footer sidebar five.', 'colormag' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title"><span>',
+		'after_title'   => '</span></h3>',
+	) );
 
 	register_widget( "colormag_featured_posts_slider_widget" );
 	register_widget( "colormag_highlighted_posts_widget" );

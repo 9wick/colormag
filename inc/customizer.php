@@ -875,6 +875,30 @@ function colormag_customize_register( $wp_customize ) {
 			'type_two' => esc_html__( 'Type 2', 'colormag' ),
 		),
 	) );
+        
+        
+	// logo upload options
+	$wp_customize->add_section( 'colormag_footer_widghet_display', array(
+		'priority' => 2,
+		'title'    => __( 'Footer Widget Display Type', 'colormag' ),
+		'panel'    => 'colormag_footer_options',
+	) );
+        
+	$wp_customize->add_setting( 'colormag_footer_widghet_display_type', array(
+		'default'           => '4widget',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize',
+	) );
+        
+        $wp_customize->add_control( 'colormag_footer_widghet_display_type', array(
+		'type'    => 'radio',
+		'label'   => __( 'Choose the option that you want', 'colormag' ),
+		'section' => 'colormag_footer_widghet_display',
+		'choices' => array(
+			'4widget' => "A main widget and three sub widget",
+			'5widget'  => "Five sub widget",
+		),
+	) );
 	// End of Footer Options
 	// Start of the Additional Options
 	$wp_customize->add_panel( 'colormag_additional_options', array(

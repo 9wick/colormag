@@ -282,6 +282,25 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 					),
 				),
 				'colormag_footer_sidebar_four'                     => array(
+					'text_footer_other_themes' => array(
+						'text',
+						array(
+							'title' => 'Other Themes',
+							'text'  => '<ul>
+										<li><a href="https://themegrill.com/themes/envince/">Envince</a></li>
+										<li><a href="https://themegrill.com/themes/estore/">eStore</a></li>
+										<li><a href="https://themegrill.com/themes/ample/">Ample</a></li>
+										<li><a href="https://themegrill.com/themes/spacious/">Spacious</a></li>
+										<li><a href="https://themegrill.com/themes/accelerate/">Accelerate</a></li>
+										<li><a href="https://themegrill.com/themes/radiate/">Radiate</a></li>
+										<li><a href="https://themegrill.com/themes/esteem/">Esteem</a></li>
+										<li><a href="https://themegrill.com/themes/himalayas/">Himalayas</a></li>
+										<li><a href="https://themegrill.com/themes/colornews/">ColorNews</a></li>
+									</ul>',
+						),
+					),
+				),
+				'colormag_footer_sidebar_five'                     => array(
 					'ad_banner_footer'         => array(
 						'colormag_300x250_advertisement_widget',
 						array(
