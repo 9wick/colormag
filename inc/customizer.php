@@ -600,6 +600,55 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_primary_color_setting',
 		'settings' => 'colormag_primary_color',
 	) ) );
+        
+        
+	// primary color options
+	$wp_customize->add_section( 'colormag_other_color_setting', array(
+		'panel'    => 'colormag_design_options',
+		'priority' => 7,
+		'title'    => __( 'Other color option', 'colormag' ),
+	) );
+
+	$wp_customize->add_setting( 'colormag_header_background_color', array(
+		'default'              => '#232323',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_header_background_color', array(
+		'label'    => __( 'Header background color. Choose a color to match your site', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_header_background_color',
+	) ) );
+        
+        
+	$wp_customize->add_setting( 'colormag_header_text_color', array(
+		'default'              => '#FFFFFF',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_header_text_color', array(
+		'label'    => __( 'Header text color', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_header_text_color',
+	) ) );
+
+	$wp_customize->add_setting( 'colormag_header_text_hover_color', array(
+		'default'              => '#FFFFFF',
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_header_text_hover_color', array(
+		'label'    => __( 'Header text color (mouseover)', 'colormag' ),
+		'section'  => 'colormag_other_color_setting',
+		'settings' => 'colormag_header_text_hover_color',
+	) ) );
+
 
 	// Color Skin
 	$wp_customize->add_section( 'colormag_color_skin_setting_section', array(
