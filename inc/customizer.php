@@ -248,6 +248,30 @@ function colormag_customize_register( $wp_customize ) {
 		'settings' => 'colormag_responsive_menu',
 	) );
 
+        
+	// logo upload options
+	$wp_customize->add_section( 'colormag_header_use', array(
+		'priority' => 0,
+		'title'    => __( 'Header Enable', 'colormag' ),
+		'panel'    => 'colormag_header_options',
+	) );
+        
+	$wp_customize->add_setting( 'colormag_header_use_enable', array(
+		'default'           => 'enable',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize',
+	) );
+        
+        $wp_customize->add_control( 'colormag_header_use_enable', array(
+		'type'    => 'radio',
+		'label'   => __( 'Choose the option that you want', 'colormag' ),
+		'section' => 'colormag_header_use',
+		'choices' => array(
+			'enable' => "enable",
+			'disable'  => "disable",
+		),
+	) );
+        
 	// logo upload options
 	$wp_customize->add_section( 'colormag_header_logo', array(
 		'priority' => 1,
@@ -269,6 +293,9 @@ function colormag_customize_register( $wp_customize ) {
 		) ) );
 	}
 
+        
+
+        
 	$wp_customize->add_setting( 'colormag_header_logo_placement', array(
 		'default'           => 'header_text_only',
 		'capability'        => 'edit_theme_options',
@@ -287,6 +314,7 @@ function colormag_customize_register( $wp_customize ) {
 		),
 	) );
 
+        
 	class COLORMAG_Image_Radio_Control extends WP_Customize_Control {
 
 		public function render_content() {
@@ -911,7 +939,7 @@ function colormag_customize_register( $wp_customize ) {
 			return '';
 		}
 	}
-
+        
 	function colormag_show_radio_saniztize( $input ) {
 		$valid_keys = array(
 			'header_logo_only' => __( 'Header Logo Only', 'colormag' ),

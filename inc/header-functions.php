@@ -154,6 +154,9 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 	 * @since ColorMag 1.2.2
 	 */
 	function colormag_middle_header_bar_display() {
+            if ( get_theme_mod( 'colormag_header_use_enable', 'enable' ) == 'disable' ){
+                return;
+            }
 		?>
 
 		<div class="inner-wrap">
